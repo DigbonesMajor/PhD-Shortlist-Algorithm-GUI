@@ -7,5 +7,11 @@ The code consists of 3 phases:
 3. Final Shortlisting - Shortlists candidates further based on scores set by the professor  
 
 GUI.mlapp has all the source code.
+
+Code.txt has all the code in .txt format
+
+Installation folder has the final .exe file to install into system.
+
 Sample.xlsx is the Sample format for candidates list.
+
 GUI Images has consists of Images of GUI in action.

@@ -1,0 +1,2267 @@
+classdef GUI < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure                        matlab.ui.Figure
+        UITable                         matlab.ui.control.Table
+        STATUSTextAreaLabel             matlab.ui.control.Label
+        STATUSTextArea                  matlab.ui.control.TextArea
+        Panel                           matlab.ui.container.Panel
+        LoadTableButton                 matlab.ui.control.Button
+        FileLoadedLamp                  matlab.ui.control.Lamp
+        DivideandScrutinyShortlistCandidatesButton  matlab.ui.control.Button
+        Lamp                            matlab.ui.control.Lamp
+        ViewShortlistedCandidatesPanel  matlab.ui.container.Panel
+        GENButton                       matlab.ui.control.StateButton
+        GENButton_2                     matlab.ui.control.StateButton
+        GENButton_3                     matlab.ui.control.StateButton
+        GENButton_4                     matlab.ui.control.StateButton
+        GENButton_5                     matlab.ui.control.StateButton
+        GENButton_6                     matlab.ui.control.StateButton
+        GENButton_7                     matlab.ui.control.StateButton
+        OBCButton                       matlab.ui.control.StateButton
+        OBCButton_2                     matlab.ui.control.StateButton
+        OBCButton_3                     matlab.ui.control.StateButton
+        OBCButton_4                     matlab.ui.control.StateButton
+        OBCButton_5                     matlab.ui.control.StateButton
+        OBCButton_6                     matlab.ui.control.StateButton
+        OBCButton_14                    matlab.ui.control.StateButton
+        SCButton                        matlab.ui.control.StateButton
+        SCButton_2                      matlab.ui.control.StateButton
+        SCButton_3                      matlab.ui.control.StateButton
+        SCButton_4                      matlab.ui.control.StateButton
+        SCButton_5                      matlab.ui.control.StateButton
+        SCButton_6                      matlab.ui.control.StateButton
+        SCButton_7                      matlab.ui.control.StateButton
+        GENButton_14                    matlab.ui.control.StateButton
+        GENButton_13                    matlab.ui.control.StateButton
+        GENButton_12                    matlab.ui.control.StateButton
+        GENButton_11                    matlab.ui.control.StateButton
+        GENButton_10                    matlab.ui.control.StateButton
+        GENButton_9                     matlab.ui.control.StateButton
+        GENButton_8                     matlab.ui.control.StateButton
+        OBCButton_7                     matlab.ui.control.StateButton
+        OBCButton_8                     matlab.ui.control.StateButton
+        OBCButton_9                     matlab.ui.control.StateButton
+        OBCButton_10                    matlab.ui.control.StateButton
+        OBCButton_11                    matlab.ui.control.StateButton
+        OBCButton_12                    matlab.ui.control.StateButton
+        OBCButton_13                    matlab.ui.control.StateButton
+        SCButton_14                     matlab.ui.control.StateButton
+        SCButton_13                     matlab.ui.control.StateButton
+        SCButton_12                     matlab.ui.control.StateButton
+        SCButton_11                     matlab.ui.control.StateButton
+        SCButton_10                     matlab.ui.control.StateButton
+        SCButton_9                      matlab.ui.control.StateButton
+        SCButton_8                      matlab.ui.control.StateButton
+        GATECandidatesLabel             matlab.ui.control.Label
+        NONGATECandidatesLabel          matlab.ui.control.Label
+        TextArea                        matlab.ui.control.TextArea
+        TextArea_2                      matlab.ui.control.TextArea
+        TextArea_3                      matlab.ui.control.TextArea
+        TextArea_4                      matlab.ui.control.TextArea
+        TextArea_5                      matlab.ui.control.TextArea
+        TextArea_6                      matlab.ui.control.TextArea
+        TextArea_7                      matlab.ui.control.TextArea
+        SubjectCodesLabel               matlab.ui.control.Label
+        GENButton_15                    matlab.ui.control.StateButton
+        FurtherShortlistCandidatesButton  matlab.ui.control.Button
+        SetCutoffsPanel                 matlab.ui.container.Panel
+        SubjectCodesLabel_2             matlab.ui.control.Label
+        TextArea_8                      matlab.ui.control.TextArea
+        TextArea_9                      matlab.ui.control.TextArea
+        TextArea_10                     matlab.ui.control.TextArea
+        TextArea_11                     matlab.ui.control.TextArea
+        TextArea_12                     matlab.ui.control.TextArea
+        TextArea_13                     matlab.ui.control.TextArea
+        TextArea_14                     matlab.ui.control.TextArea
+        GENGATELabel                    matlab.ui.control.Label
+        Label                           matlab.ui.control.Label
+        GENEWSGATELabel                 matlab.ui.control.Label
+        OBCGATELabel                    matlab.ui.control.Label
+        PWDGATELabel                    matlab.ui.control.Label
+        SCGATELabel                     matlab.ui.control.Label
+        GENNongateLabel                 matlab.ui.control.Label
+        GENEWSNongateLabel              matlab.ui.control.Label
+        OBCNongateLabel                 matlab.ui.control.Label
+        PWDNongateLabel                 matlab.ui.control.Label
+        SCNongateLabel                  matlab.ui.control.Label
+        EditField                       matlab.ui.control.NumericEditField
+        EditField_2                     matlab.ui.control.NumericEditField
+        EditField_3                     matlab.ui.control.NumericEditField
+        EditField_4                     matlab.ui.control.NumericEditField
+        EditField_5                     matlab.ui.control.NumericEditField
+        EditField_6                     matlab.ui.control.NumericEditField
+        EditField_7                     matlab.ui.control.NumericEditField
+        EditField_8                     matlab.ui.control.NumericEditField
+        EditField_9                     matlab.ui.control.NumericEditField
+        EditField_10                    matlab.ui.control.NumericEditField
+        EditField_11                    matlab.ui.control.NumericEditField
+        EditField_12                    matlab.ui.control.NumericEditField
+        EditField_13                    matlab.ui.control.NumericEditField
+        EditField_14                    matlab.ui.control.NumericEditField
+        EditField_15                    matlab.ui.control.NumericEditField
+        EditField_16                    matlab.ui.control.NumericEditField
+        EditField_17                    matlab.ui.control.NumericEditField
+        EditField_18                    matlab.ui.control.NumericEditField
+        EditField_19                    matlab.ui.control.NumericEditField
+        EditField_20                    matlab.ui.control.NumericEditField
+        EditField_21                    matlab.ui.control.NumericEditField
+        EditField_22                    matlab.ui.control.NumericEditField
+        EditField_23                    matlab.ui.control.NumericEditField
+        EditField_24                    matlab.ui.control.NumericEditField
+        EditField_25                    matlab.ui.control.NumericEditField
+        EditField_26                    matlab.ui.control.NumericEditField
+        EditField_27                    matlab.ui.control.NumericEditField
+        EditField_28                    matlab.ui.control.NumericEditField
+        EditField_29                    matlab.ui.control.NumericEditField
+        EditField_30                    matlab.ui.control.NumericEditField
+        EditField_31                    matlab.ui.control.NumericEditField
+        EditField_32                    matlab.ui.control.NumericEditField
+        EditField_33                    matlab.ui.control.NumericEditField
+        EditField_34                    matlab.ui.control.NumericEditField
+        EditField_35                    matlab.ui.control.NumericEditField
+        EditField_36                    matlab.ui.control.NumericEditField
+        EditField_37                    matlab.ui.control.NumericEditField
+        EditField_38                    matlab.ui.control.NumericEditField
+        EditField_39                    matlab.ui.control.NumericEditField
+        EditField_40                    matlab.ui.control.NumericEditField
+        EditField_41                    matlab.ui.control.NumericEditField
+        EditField_42                    matlab.ui.control.NumericEditField
+        EditField_43                    matlab.ui.control.NumericEditField
+        EditField_44                    matlab.ui.control.NumericEditField
+        EditField_45                    matlab.ui.control.NumericEditField
+        EditField_46                    matlab.ui.control.NumericEditField
+        EditField_47                    matlab.ui.control.NumericEditField
+        EditField_48                    matlab.ui.control.NumericEditField
+        EditField_49                    matlab.ui.control.NumericEditField
+        EditField_50                    matlab.ui.control.NumericEditField
+        EditField_51                    matlab.ui.control.NumericEditField
+        EditField_52                    matlab.ui.control.NumericEditField
+        EditField_53                    matlab.ui.control.NumericEditField
+        EditField_54                    matlab.ui.control.NumericEditField
+        EditField_55                    matlab.ui.control.NumericEditField
+        EditField_56                    matlab.ui.control.NumericEditField
+        EditField_57                    matlab.ui.control.NumericEditField
+        EditField_58                    matlab.ui.control.NumericEditField
+        EditField_59                    matlab.ui.control.NumericEditField
+        EditField_60                    matlab.ui.control.NumericEditField
+        EditField_61                    matlab.ui.control.NumericEditField
+        EditField_62                    matlab.ui.control.NumericEditField
+        EditField_63                    matlab.ui.control.NumericEditField
+        EditField_64                    matlab.ui.control.NumericEditField
+        EditField_65                    matlab.ui.control.NumericEditField
+        EditField_66                    matlab.ui.control.NumericEditField
+        EditField_67                    matlab.ui.control.NumericEditField
+        EditField_68                    matlab.ui.control.NumericEditField
+        EditField_69                    matlab.ui.control.NumericEditField
+        EditField_70                    matlab.ui.control.NumericEditField
+        GOButton                        matlab.ui.control.Button
+    end
+
+    
+    properties (Access = private)
+        reading='Scrutiny_Shortlist.xlsx'; % Description
+    end
+    
+    methods (Access = private)
+        
+        function divide_in_group(~,candidates,subject, subject_code, gate)
+            placeholder=candidates(strcmp(candidates.PSBAR1,subject)|  strcmp(candidates.PSBAR2,subject),:);
+            placeholder_gen = placeholder(strcmp(placeholder.Category,"GEN") | strcmp(placeholder.Category,"GEN-EWS") ,:);
+            if gate
+                writetable(placeholder_gen,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_GEN_Gate"));
+            else
+                writetable(placeholder_gen,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_GEN_nongate"));
+            end
+            
+            placeholder_obc = placeholder(strcmp(placeholder.Category,"OBC-NC") | strcmp(placeholder.Category,"OBC"),:);
+            if gate
+                writetable(placeholder_obc,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_OBC_Gate"));
+            else
+                writetable(placeholder_obc,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_OBC_nongate"));
+            end
+            
+            placeholder_sc = placeholder(strcmp(placeholder.Category,"SC") | strcmp(placeholder.Category,"ST") ,:);
+            if gate==1
+                writetable(placeholder_sc,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_SC_Gate"));
+            else
+                writetable(placeholder_sc,"PhD_Candidate_latest.xlsx","Sheet",strcat(subject_code,"_SC_nongate"));
+            end
+        end
+        
+        
+        
+        function scrutiny(app)
+            table_data= app.UITable.Data;
+            gate_candidates=table_data(strcmp(string(table_data.NLQEP),"GATE") & ~strcmp(string(table_data.NLQEP1),"CSIR/UGC JRF") ,:);
+            nongate_candidates=table_data(~strcmp(string(table_data.NLQEP),"GATE") | strcmp(string(table_data.NLQEP1),"CSIR/UGC JRF") ,:);
+            
+            
+            divide_in_group(app,gate_candidates,"Photonics","PH",1);
+            divide_in_group(app,nongate_candidates,"Photonics","PH",0);
+            
+            divide_in_group(app,gate_candidates,"High Energy Physics","HEP",1);
+            divide_in_group(app,nongate_candidates,"High Energy Physics","HEP",0);
+            
+            divide_in_group(app,gate_candidates,"Condensed Matter Physics","CMP",1);
+            divide_in_group(app,nongate_candidates,"Condensed Matter Physics","CMP",0);
+            
+            divide_in_group(app,gate_candidates,"Atmospheric & Space Physics","ASP",1);
+            divide_in_group(app,nongate_candidates,"Atmospheric & Space Physics","ASP",0);
+            
+            divide_in_group(app,gate_candidates,"Nuclear Physics","NP",1);
+            divide_in_group(app,nongate_candidates,"Nuclear Physics","NP",0);
+            
+            divide_in_group(app,gate_candidates,"Atomic & Molecular Physics","AMP",1);
+            divide_in_group(app,nongate_candidates,"Atomic & Molecular Physics","AMP",0);
+            
+            divide_in_group(app,gate_candidates,"Atmospheric Physics","AP",1);
+            divide_in_group(app,nongate_candidates,"Atmospheric Physics","AP",0);
+            
+            masters_degree_cutoff_gen=60;   %Same for GEN/OBC/EWS
+            masters_degree_cutoff_sc=55;    %Same for SC/ST
+            masters_degree_cutoff_pwd=55;   % For PWD
+            
+            CFTI_cutoff = 70;
+            Non_CFTI_cutoff = 75;
+            
+            shortlisting(app,"PH_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"PH_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"PH_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"PH_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"PH_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"PH_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"HEP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"HEP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"HEP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"HEP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"HEP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"HEP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"CMP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"CMP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"CMP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"CMP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"CMP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"CMP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"ASP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"ASP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"ASP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"ASP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"ASP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"ASP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"NP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"NP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"NP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"NP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"NP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"NP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"AMP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AMP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AMP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AMP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AMP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AMP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            shortlisting(app,"AP_GEN_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AP_OBC_GATE",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AP_GEN_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AP_OBC_nongate",masters_degree_cutoff_gen,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AP_SC_GATE",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            shortlisting(app,"AP_SC_nongate",masters_degree_cutoff_sc,masters_degree_cutoff_pwd,CFTI_cutoff, Non_CFTI_cutoff);
+            
+            
+            app.STATUSTextArea.Value="Shortlisted";
+            app.Panel.Visible="off";
+            app.ViewShortlistedCandidatesPanel.Visible="on";
+            app.FurtherShortlistCandidatesButton.Visible="on";
+            
+            
+        end
+        
+        function enable(app)
+            app.GENButton.Value=false;
+            app.OBCButton.Value=false;
+            app.SCButton.Value=false;
+            app.GENButton_14.Value=false;
+            app.OBCButton_7.Value=false;
+            app.SCButton_14.Value=false;
+            app.GENButton_2.Value=false;
+            app.OBCButton_2.Value=false;
+            app.SCButton_2.Value=false;
+            app.GENButton_13.Value=false;
+            app.OBCButton_8.Value=false;
+            app.SCButton_13.Value=false;
+            app.GENButton_12.Value=false;
+            app.GENButton_11.Value=false;
+            app.GENButton_10.Value=false;
+            app.GENButton_15.Value=false;
+            app.GENButton_8.Value=false;
+            app.OBCButton_9.Value=false;
+            app.OBCButton_10.Value=false;
+            app.OBCButton_11.Value=false;
+            app.OBCButton_12.Value=false;
+            app.OBCButton_13.Value=false;
+            app.SCButton_12.Value=false;
+            app.SCButton_11.Value=false;
+            app.SCButton_10.Value=false;
+            app.SCButton_9.Value=false;
+            app.SCButton_8.Value=false;
+            app.GENButton_3.Value=false;
+            app.GENButton_4.Value=false;
+            app.GENButton_5.Value=false;
+            app.GENButton_6.Value=false;
+            app.GENButton_7.Value=false;
+            app.OBCButton_3.Value=false;
+            app.OBCButton_4.Value=false;
+            app.OBCButton_5.Value=false;
+            app.OBCButton_6.Value=false;
+            app.OBCButton_14.Value=false;
+            app.SCButton_3.Value=false;
+            app.SCButton_4.Value=false;
+            app.SCButton_5.Value=false;
+            app.SCButton_6.Value=false;
+            app.SCButton_7.Value=false;
+            
+            
+            
+        end
+        
+        function shortlisting(app,acronym,cutoff, pwd_cutoff,CFTI_cutoff, Non_CFTI_cutoff)
+            table_data= readtable("PhD_Candidate_latest.xlsx","sheet",acronym);
+            
+            if(height(table_data)==0)
+                writetable(table_data,"Scrutiny_Shortlist.xlsx","sheet",acronym);
+                return;
+            end
+            masters_grades= table_data(~strcmp(table_data.QualifiengDegree,"B.Sc"),:); % Qualifying Degree shouldn't be B.SC
+            masters_select= table_data(strcmp(table_data.QualifiengDegreeLevel,"Placeholder Degree ABCD"),:);
+            x=height(masters_grades);
+            for i=1:x
+                hold=masters_grades(i,:);
+                if strcmp(hold.PercentageOrCGPA,"CGPA")
+                    temp=hold.QualiDegreeMaxMarks_PointScale;
+                    temp=double(string(temp));
+                    if(hold.MarksCGPAObtained>temp)
+                        temp=100;
+                    end
+                    if strcmp("Yes",hold.PhysicalyDisabled)
+                        if ((hold.MarksCGPAObtained * 100)/temp >=pwd_cutoff && checker(app,hold,CFTI_cutoff, Non_CFTI_cutoff))
+                            masters_select(height(masters_select)+1,:)= hold;
+                        end
+                    elseif ((hold.MarksCGPAObtained * 100)/temp >=cutoff && checker(app,hold,CFTI_cutoff, Non_CFTI_cutoff))
+                        masters_select(height(masters_select)+1,:)= hold;
+                    end
+                elseif (strcmp(hold.PercentageOrCGPA,"Percentage"))
+                    if strcmp("Yes",hold.PhysicalyDisabled)
+                        if (hold.MarksCGPAObtained >=pwd_cutoff && checker(app,hold,CFTI_cutoff, Non_CFTI_cutoff))
+                            masters_select(height(masters_select)+1,:)= hold;
+                        end
+                    elseif (hold.MarksCGPAObtained >=cutoff && checker(app,hold,CFTI_cutoff, Non_CFTI_cutoff))
+                        masters_select(height(masters_select)+1,:)= hold;
+                    end
+                end
+            end
+            writetable(masters_select,"Scrutiny_Shortlist.xlsx","sheet",acronym);
+        end
+        
+        function [a]= checker(~,hold,CFTI_cutoff, Non_CFTI_cutoff)
+            a=0;
+            if strcmp(hold.CFTI,"Yes")
+                if strcmp(hold.MSystem2,"Percentage")
+                    if hold.MarksObtained2>=CFTI_cutoff
+                        a=1;
+                        return
+                    end
+                else
+                    temp=double(string(hold.MaxMarks_Scale2));
+                    if hold.MarksObtained2>temp
+                        temp=100;
+                    end
+                    if (hold.MarksObtained2 * 100)/temp >=CFTI_cutoff
+                        a=1;
+                        return
+                    end
+                end
+            else
+                if strcmp(hold.MSystem2,"Percentage")
+                    if hold.MarksObtained2>=Non_CFTI_cutoff
+                        a=1;
+                        return
+                    end
+                else
+                    temp=double(string(hold.MaxMarks_Scale2));
+                    if hold.MarksObtained2>temp
+                        temp=100;
+                    end
+                    if (hold.MarksObtained2 * 100)/temp >=Non_CFTI_cutoff
+                        a=1;
+                        return
+                    end
+                end
+            end
+            
+        end
+        
+        function Final_List(~,acronym,cutoff, gate,GEN_EWS_cutoff,PWD_cutoff)
+            table_data=readtable("Scrutiny_Shortlist.xlsx","sheet",acronym);
+            if height(table_data)==0
+                writetable(table_data,"Final_List.xlsx","sheet",acronym);
+                return;
+            end
+            if gate
+                selected1= table_data( strcmp(table_data.PhysicalyDisabled,"No") & ~strcmp(table_data.Category,"GEN_EWS") & double(string(table_data.Score))>=cutoff ,:);
+                selected2= table_data( strcmp(table_data.PhysicalyDisabled,"Yes") & double(string(table_data.Score))>=PWD_cutoff,:);
+                selected3= table_data( strcmp(table_data.PhysicalyDisabled,"No") & strcmp(table_data.Category,"GEN_EWS") & double(string(table_data.Score))>=GEN_EWS_cutoff ,:);
+                selected=[selected1 ;selected2 ;selected3];
+                selected= sortrows(selected,"Score","descend");
+                writetable(selected,"Final_List.xlsx","sheet",acronym);
+            else
+                selected1_1= table_data( strcmp(table_data.PhysicalyDisabled,"No") & ~strcmp(table_data.Category,"GEN_EWS"),:);
+                selected1_11=selected1_1;
+                selected1_12=selected1_1;
+                if height(selected1_1)>0
+                    selected1_11= selected1_1(strcmp(selected1_1.NLQEP,"GATE") & double(string(selected1_1.Score1))>=cutoff,: );
+                    selected1_12= selected1_1(~strcmp(selected1_1.NLQEP,"GATE") & double(string(selected1_1.Score))>=cutoff,: );
+                end
+                
+                selected2_2= table_data( strcmp(table_data.PhysicalyDisabled,"Yes") ,:);
+                selected2_21=selected2_2;
+                selected2_22=selected2_2;
+                if height(selected2_2)>0
+                    selected2_21= selected2_2(strcmp(selected2_2.NLQEP,"GATE") & double(string(selected2_2.Score1))>=PWD_cutoff,: );
+                    selected2_22= selected2_2(~strcmp(selected2_2.NLQEP,"GATE") & double(string(selected2_2.Score))>=PWD_cutoff,: );
+                end
+                selected3_3= table_data( strcmp(table_data.PhysicalyDisabled,"No") & strcmp(table_data.Category,"GEN_EWS"),:);
+                selected3_31=selected3_3;
+                selected3_32=selected3_3;
+                if height(selected3_3)>0
+                    selected3_31= selected3_3(strcmp(selected3_3.NLQEP,"GATE") & double(string(selected3_3.Score1))>=GEN_EWS_cutoff,: );
+                    selected3_32= selected3_3(~strcmp(selected3_3.NLQEP,"GATE") & double(string(selected3_3.Score))>=GEN_EWS_cutoff,: );
+                end
+                
+                selected=[selected1_11; selected1_12 ;selected2_21; selected2_22 ;selected3_31; selected3_32];
+                selected= sortrows(selected,"Score1","descend");
+                writetable(selected,"Final_List.xlsx","sheet",acronym);
+            end
+        end
+        
+        function Final(app)
+            
+            %Atomic & Molecular Physics
+            AMP_GEN_Gate_cutoff=app.EditField.Value;
+            AMP_GEN_EWS_Gate_cutoff=app.EditField_8.Value;
+            AMP_OBC_Gate_cutoff=app.EditField_15.Value;
+            AMP_SC_Gate_cutoff=app.EditField_22.Value;
+            AMP_PWD_Gate_cutoff=app.EditField_29.Value;
+            
+            AMP_GEN_nongate_cutoff=app.EditField_36.Value;
+            AMP_GEN_EWS_nongate_cutoff=app.EditField_43.Value;
+            AMP_OBC_nongate_cutoff=app.EditField_50.Value;
+            AMP_SC_nongate_cutoff=app.EditField_64.Value;
+            AMP_PWD_nongate_cutoff=app.EditField_57.Value;
+            
+            %Atmospheric & Space Physics
+            ASP_GEN_Gate_cutoff=app.EditField_2.Value;
+            ASP_GEN_EWS_Gate_cutoff=app.EditField_9.Value;
+            ASP_OBC_Gate_cutoff=app.EditField_16.Value;
+            ASP_SC_Gate_cutoff=app.EditField_23.Value;
+            ASP_PWD_Gate_cutoff=app.EditField_30.Value;
+            
+            ASP_GEN_nongate_cutoff=app.EditField_37.Value;
+            ASP_GEN_EWS_nongate_cutoff=app.EditField_44.Value;
+            ASP_OBC_nongate_cutoff=app.EditField_51.Value;
+            ASP_SC_nongate_cutoff=app.EditField_65.Value;
+            ASP_PWD_nongate_cutoff=app.EditField_58.Value;
+            
+            
+            %Atmospheric Physics
+            AP_GEN_Gate_cutoff=app.EditField_3.Value;
+            AP_GEN_EWS_Gate_cutoff=app.EditField_10.Value;
+            AP_OBC_Gate_cutoff=app.EditField_17.Value;
+            AP_SC_Gate_cutoff=app.EditField_24.Value;
+            AP_PWD_Gate_cutoff=app.EditField_31.Value;
+            
+            AP_GEN_nongate_cutoff=app.EditField_38.Value;
+            AP_GEN_EWS_nongate_cutoff=app.EditField_45.Value;
+            AP_OBC_nongate_cutoff=app.EditField_52.Value;
+            AP_SC_nongate_cutoff=app.EditField_66.Value;
+            AP_PWD_nongate_cutoff=app.EditField_59.Value;
+            
+            
+            %Condensed Matter Physics
+            CMP_GEN_Gate_cutoff=app.EditField_4.Value;
+            CMP_GEN_EWS_Gate_cutoff=app.EditField_11.Value;
+            CMP_OBC_Gate_cutoff=app.EditField_18.Value;
+            CMP_SC_Gate_cutoff=app.EditField_25.Value;
+            CMP_PWD_Gate_cutoff=app.EditField_32.Value;
+            
+            CMP_GEN_nongate_cutoff=app.EditField_39.Value;
+            CMP_GEN_EWS_nongate_cutoff=app.EditField_46.Value;
+            CMP_OBC_nongate_cutoff=app.EditField_53.Value;
+            CMP_SC_nongate_cutoff=app.EditField_67.Value;
+            CMP_PWD_nongate_cutoff=app.EditField_60.Value;
+            
+            
+            %High Energy Physics
+            HEP_GEN_Gate_cutoff=app.EditField_5.Value;
+            HEP_GEN_EWS_Gate_cutoff=app.EditField_12.Value;
+            HEP_OBC_Gate_cutoff=app.EditField_19.Value;
+            HEP_SC_Gate_cutoff=app.EditField_26.Value;
+            HEP_PWD_Gate_cutoff=app.EditField_33.Value;
+            
+            HEP_GEN_nongate_cutoff=app.EditField_40.Value;
+            HEP_GEN_EWS_nongate_cutoff=app.EditField_47.Value;
+            HEP_OBC_nongate_cutoff=app.EditField_54.Value;
+            HEP_SC_nongate_cutoff=app.EditField_68.Value;
+            HEP_PWD_nongate_cutoff=app.EditField_61.Value;
+            
+            %Nuclear Physics
+            NP_GEN_Gate_cutoff=app.EditField_6.Value;
+            NP_GEN_EWS_Gate_cutoff=app.EditField_13.Value;
+            NP_OBC_Gate_cutoff=app.EditField_20.Value;
+            NP_SC_Gate_cutoff=app.EditField_27.Value;
+            NP_PWD_Gate_cutoff=app.EditField_34.Value;
+            
+            NP_GEN_nongate_cutoff=app.EditField_41.Value;
+            NP_GEN_EWS_nongate_cutoff=app.EditField_48.Value;
+            NP_OBC_nongate_cutoff=app.EditField_55.Value;
+            NP_SC_nongate_cutoff=app.EditField_69.Value;
+            NP_PWD_nongate_cutoff=app.EditField_62.Value;
+            
+            %Photonoics
+            PH_GEN_Gate_cutoff=app.EditField_7.Value;
+            PH_GEN_EWS_Gate_cutoff=app.EditField_14.Value;
+            PH_OBC_Gate_cutoff=app.EditField_21.Value;
+            PH_SC_Gate_cutoff=app.EditField_28.Value;
+            PH_PWD_Gate_cutoff=app.EditField_35.Value;
+            
+            PH_GEN_nongate_cutoff=app.EditField_42.Value;
+            PH_GEN_EWS_nongate_cutoff=app.EditField_49.Value;
+            PH_OBC_nongate_cutoff=app.EditField_56.Value;
+            PH_SC_nongate_cutoff=app.EditField_70.Value;
+            PH_PWD_nongate_cutoff=app.EditField_63.Value;
+            
+            
+            Final_List(app,"PH_GEN_Gate",PH_GEN_Gate_cutoff,1,PH_GEN_EWS_Gate_cutoff,PH_PWD_Gate_cutoff);
+            Final_List(app,"PH_OBC_Gate",PH_OBC_Gate_cutoff,1,PH_GEN_EWS_Gate_cutoff,PH_PWD_Gate_cutoff);
+            Final_List(app,"PH_SC_Gate",PH_SC_Gate_cutoff,1,PH_GEN_EWS_Gate_cutoff,PH_PWD_Gate_cutoff);
+            
+            Final_List(app,"PH_GEN_nongate",PH_GEN_nongate_cutoff,0,PH_GEN_EWS_nongate_cutoff,PH_PWD_nongate_cutoff);
+            Final_List(app,"PH_OBC_nongate",PH_OBC_nongate_cutoff,0,PH_GEN_EWS_nongate_cutoff,PH_PWD_nongate_cutoff);
+            Final_List(app,"PH_SC_nongate",PH_SC_nongate_cutoff,0,PH_GEN_EWS_nongate_cutoff,PH_PWD_nongate_cutoff);
+            
+            
+            %High Energy Physics
+            
+            Final_List(app,"HEP_GEN_Gate",HEP_GEN_Gate_cutoff,1,HEP_GEN_EWS_Gate_cutoff,HEP_PWD_Gate_cutoff);
+            Final_List(app,"HEP_OBC_Gate",HEP_OBC_Gate_cutoff,1,HEP_GEN_EWS_Gate_cutoff,HEP_PWD_Gate_cutoff);
+            Final_List(app,"HEP_SC_Gate",HEP_SC_Gate_cutoff,1,HEP_GEN_EWS_Gate_cutoff,HEP_PWD_Gate_cutoff);
+            Final_List(app,"HEP_GEN_nongate",HEP_GEN_nongate_cutoff,0,HEP_GEN_EWS_nongate_cutoff,HEP_PWD_nongate_cutoff);
+            Final_List(app,"HEP_OBC_nongate",HEP_OBC_nongate_cutoff,0,HEP_GEN_EWS_nongate_cutoff,HEP_PWD_nongate_cutoff);
+            Final_List(app,"HEP_SC_nongate",HEP_SC_nongate_cutoff,0,HEP_GEN_EWS_nongate_cutoff,HEP_PWD_nongate_cutoff);
+            
+            %Condensed Matter Physics
+            
+            Final_List(app,"CMP_GEN_Gate",CMP_GEN_Gate_cutoff,1,CMP_GEN_EWS_Gate_cutoff,CMP_PWD_Gate_cutoff);
+            Final_List(app,"CMP_OBC_Gate",CMP_OBC_Gate_cutoff,1,CMP_GEN_EWS_Gate_cutoff,CMP_PWD_Gate_cutoff);
+            Final_List(app,"CMP_SC_Gate",CMP_SC_Gate_cutoff,1,CMP_GEN_EWS_Gate_cutoff,CMP_PWD_Gate_cutoff);
+            Final_List(app,"CMP_GEN_nongate",CMP_GEN_nongate_cutoff,0,CMP_GEN_EWS_nongate_cutoff,CMP_PWD_nongate_cutoff);
+            Final_List(app,"CMP_OBC_nongate",CMP_OBC_nongate_cutoff,0,CMP_GEN_EWS_nongate_cutoff,CMP_PWD_nongate_cutoff);
+            Final_List(app,"CMP_SC_nongate",CMP_SC_nongate_cutoff,0,CMP_GEN_EWS_nongate_cutoff,CMP_PWD_nongate_cutoff);
+            
+            %Atmospheric & Space Physics
+            
+            Final_List(app,"ASP_GEN_Gate",ASP_GEN_Gate_cutoff,1,ASP_GEN_EWS_Gate_cutoff,ASP_PWD_Gate_cutoff);
+            Final_List(app,"ASP_OBC_Gate",ASP_OBC_Gate_cutoff,1,ASP_GEN_EWS_Gate_cutoff,ASP_PWD_Gate_cutoff);
+            Final_List(app,"ASP_SC_Gate",ASP_SC_Gate_cutoff,1,ASP_GEN_EWS_Gate_cutoff,ASP_PWD_Gate_cutoff);
+            Final_List(app,"ASP_GEN_nongate",ASP_GEN_nongate_cutoff,0,ASP_GEN_EWS_nongate_cutoff,ASP_PWD_nongate_cutoff);
+            Final_List(app,"ASP_OBC_nongate",ASP_OBC_nongate_cutoff,0,ASP_GEN_EWS_nongate_cutoff,ASP_PWD_nongate_cutoff);
+            Final_List(app,"ASP_SC_nongate",ASP_SC_nongate_cutoff,0,ASP_GEN_EWS_nongate_cutoff,ASP_PWD_nongate_cutoff);
+            
+            %Nuclear Physics
+            
+            Final_List(app,"NP_GEN_Gate",NP_GEN_Gate_cutoff,1,NP_GEN_EWS_Gate_cutoff,NP_PWD_Gate_cutoff);
+            Final_List(app,"NP_OBC_Gate",NP_OBC_Gate_cutoff,1,NP_GEN_EWS_Gate_cutoff,NP_PWD_Gate_cutoff);
+            Final_List(app,"NP_SC_Gate",NP_SC_Gate_cutoff,1,NP_GEN_EWS_Gate_cutoff,NP_PWD_Gate_cutoff);
+            Final_List(app,"NP_GEN_nongate",NP_GEN_nongate_cutoff,0,NP_GEN_EWS_nongate_cutoff,NP_PWD_nongate_cutoff);
+            Final_List(app,"NP_OBC_nongate",NP_OBC_nongate_cutoff,0,NP_GEN_EWS_nongate_cutoff,NP_PWD_nongate_cutoff);
+            Final_List(app,"NP_SC_nongate",NP_SC_nongate_cutoff,0,NP_GEN_EWS_nongate_cutoff,NP_PWD_nongate_cutoff);
+            
+            %Atmospheric Physics
+            
+            Final_List(app,"AP_GEN_Gate",AP_GEN_Gate_cutoff,1,AP_GEN_EWS_Gate_cutoff,AP_PWD_Gate_cutoff);
+            Final_List(app,"AP_OBC_Gate",AP_OBC_Gate_cutoff,1,AP_GEN_EWS_Gate_cutoff,AP_PWD_Gate_cutoff);
+            Final_List(app,"AP_SC_Gate",AP_SC_Gate_cutoff,1,AP_GEN_EWS_Gate_cutoff,AP_PWD_Gate_cutoff);
+            Final_List(app,"AP_GEN_nongate",AP_GEN_nongate_cutoff,0,AP_GEN_EWS_nongate_cutoff,AP_PWD_nongate_cutoff);
+            Final_List(app,"AP_OBC_nongate",AP_OBC_nongate_cutoff,0,AP_GEN_EWS_nongate_cutoff,AP_PWD_nongate_cutoff);
+            Final_List(app,"AP_SC_nongate",AP_SC_nongate_cutoff,0,AP_GEN_EWS_nongate_cutoff,AP_PWD_nongate_cutoff);
+            
+            %Atomic & Molecular Physics
+            
+            Final_List(app,"AMP_GEN_Gate",AMP_GEN_Gate_cutoff,1,AMP_GEN_EWS_Gate_cutoff,AMP_PWD_Gate_cutoff);
+            Final_List(app,"AMP_OBC_Gate",AMP_OBC_Gate_cutoff,1,AMP_GEN_EWS_Gate_cutoff,AMP_PWD_Gate_cutoff);
+            Final_List(app,"AMP_SC_Gate",AMP_SC_Gate_cutoff,1,AMP_GEN_EWS_Gate_cutoff,AMP_PWD_Gate_cutoff);
+            Final_List(app,"AMP_GEN_nongate",AMP_GEN_nongate_cutoff,0,AMP_GEN_EWS_nongate_cutoff,AMP_PWD_nongate_cutoff);
+            Final_List(app,"AMP_OBC_nongate",AMP_OBC_nongate_cutoff,0,AMP_GEN_EWS_nongate_cutoff,AMP_PWD_nongate_cutoff);
+            Final_List(app,"AMP_SC_nongate",AMP_SC_nongate_cutoff,0,AMP_GEN_EWS_nongate_cutoff,AMP_PWD_nongate_cutoff);
+            
+            
+            
+        end
+    end
+    
+
+    % Callbacks that handle component events
+    methods (Access = private)
+
+        % Button pushed function: LoadTableButton
+        function LoadTableButtonPushed(app, event)
+            app.STATUSTextArea.Value="Please Wait, File Loading";
+            app.FileLoadedLamp.Color="yellow";
+            drawnow;
+            %table_data=readtable('PhD_Candidate_latest.xlsx');
+            %app.UITable.Data= table_data;
+            %app.UITable.ColumnName= table_data.Properties.VariableNames;
+            %app.FileLoadedLamp.Color='g';
+            %app.STATUSTextArea.Value="File Loaded";app.STATUSTextArea.Value="File Loaded";
+            
+            [filename, pathname] = uigetfile({'*.xlsx'},'File Selector');
+            fullpath = strcat(pathname,filename);
+            x = readtable(fullpath);
+            app.UITable.Data= x;
+            app.UITable.ColumnName= x.Properties.VariableNames;
+            app.FileLoadedLamp.Color='g';
+            app.STATUSTextArea.Value="File Loaded";app.STATUSTextArea.Value="File Loaded";
+        end
+
+        % Button pushed function: 
+        % DivideandScrutinyShortlistCandidatesButton
+        function DivideandScrutinyShortlistCandidatesButtonPushed(app, event)
+            
+            if app.FileLoadedLamp.Color== [1,0,0]
+                app.STATUSTextArea.Value="ERROR! Youn need to load file first";
+                return;
+            end
+            app.Lamp.Color="yellow";
+            drawnow;
+            app.STATUSTextArea.Value="Please Wait, Scrutiny Shortlisting in Progress";
+            drawnow;
+            scrutiny(app);
+            app.Lamp.Color="green";
+            
+            
+            
+        end
+
+        % Value changed function: GENButton
+        function GENButtonValueChanged(app, event)
+            value=app.GENButton.Value;
+            if ~value
+                app.GENButton.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing AMP_GEN_GATE.xlsx";
+            
+            
+        end
+
+        % Value changed function: OBCButton
+        function OBCButtonValueChanged(app, event)
+            value=app.OBCButton.Value;
+            if ~value
+                app.OBCButton.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing AMP_OBC_GATE.xlsx";
+            
+        end
+
+        % Value changed function: SCButton
+        function SCButtonValueChanged(app, event)
+            value=app.SCButton.Value;
+            if ~value
+                app.SCButton.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing AMP_SC_GATE.xlsx";
+        end
+
+        % Value changed function: GENButton_14
+        function GENButton_14ValueChanged(app, event)
+            value=app.GENButton_14.Value;
+            if ~value
+                app.GENButton_14.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_14.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing AMP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_7
+        function OBCButton_7ValueChanged(app, event)
+            value = app.OBCButton_7.Value;
+            if ~value
+                app.OBCButton_7.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_7.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing AMP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_14
+        function SCButton_14ValueChanged(app, event)
+            value = app.SCButton_14.Value;
+            if ~value
+                app.SCButton_14.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_14.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AMP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing AMP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_2
+        function GENButton_2ValueChanged(app, event)
+            value = app.GENButton_2.Value;
+            if ~value
+                app.GENButton_2.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_2.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing ASP_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_2
+        function OBCButton_2ValueChanged(app, event)
+            value = app.OBCButton_2.Value;
+            if ~value
+                app.OBCButton_2.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_2.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing ASP_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: SCButton_2
+        function SCButton_2ValueChanged(app, event)
+            value = app.SCButton_2.Value;
+            if ~value
+                app.SCButton_2.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_2.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing ASP_SC_Gate.xlsx";
+        end
+
+        % Value changed function: GENButton_13
+        function GENButton_13ValueChanged(app, event)
+            value = app.GENButton_13.Value;
+            if ~value
+                app.GENButton_13.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_13.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing ASP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_8
+        function OBCButton_8ValueChanged(app, event)
+            value = app.OBCButton_8.Value;
+            if ~value
+                app.OBCButton_8.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_8.Value=true;
+            drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing ASP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_13
+        function SCButton_13ValueChanged(app, event)
+            value = app.SCButton_13.Value;
+            if ~value
+                app.SCButton_13.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_13.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","ASP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing ASP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_12
+        function GENButton_12ValueChanged(app, event)
+            value = app.GENButton_12.Value;
+            if ~value
+                app.GENButton_12.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_12.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing AP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_11
+        function GENButton_11ValueChanged(app, event)
+            value = app.GENButton_11.Value;
+            if ~value
+                app.GENButton_11.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_11.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing CMP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_10
+        function GENButton_10ValueChanged(app, event)
+            value = app.GENButton_10.Value;
+            if ~value
+                app.GENButton_10.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_10.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing HEP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_15
+        function GENButton_15ValueChanged(app, event)
+            value = app.GENButton_15.Value;
+            if ~value
+                app.GENButton_15.Value=true;drawnow;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_15.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing NP_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_8
+        function GENButton_8ValueChanged(app, event)
+            value = app.GENButton_8.Value;
+            if ~value
+                app.GENButton_8.Value=true;drawnow;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_8.Value=true;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_GEN_nongate");
+            app.STATUSTextArea.Value="You are Viewing PH_GEN_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_9
+        function OBCButton_9ValueChanged(app, event)
+            value = app.OBCButton_9.Value;
+            if ~value
+                app.OBCButton_9.Value=true;drawnow;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_9.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing AP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_10
+        function OBCButton_10ValueChanged(app, event)
+            value = app.OBCButton_10.Value;
+            if ~value
+                app.OBCButton_10.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_10.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing CMP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_11
+        function OBCButton_11ValueChanged(app, event)
+            value = app.OBCButton_11.Value;
+            if ~value
+                app.OBCButton_11.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_11.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing HEP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_12
+        function OBCButton_12ValueChanged(app, event)
+            value = app.OBCButton_12.Value;
+            if ~value
+                app.OBCButton_12.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_12.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing NP_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: OBCButton_13
+        function OBCButton_13ValueChanged(app, event)
+            value = app.OBCButton_13.Value;
+            if ~value
+                app.OBCButton_13.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_13.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_OBC_nongate");
+            app.STATUSTextArea.Value="You are Viewing PH_OBC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_12
+        function SCButton_12ValueChanged(app, event)
+            value = app.SCButton_12.Value;
+            if ~value
+                app.SCButton_12.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_12.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing AP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_11
+        function SCButton_11ValueChanged(app, event)
+            value = app.SCButton_11.Value;
+            if ~value
+                app.SCButton_11.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_11.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing CMP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_10
+        function SCButton_10ValueChanged(app, event)
+            value = app.SCButton_10.Value;
+            if ~value
+                app.SCButton_10.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_10.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing HEP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_9
+        function SCButton_9ValueChanged(app, event)
+            value = app.SCButton_9.Value;
+            if ~value
+                app.SCButton_9.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_9.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing NP_SC_nongate.xlsx";
+        end
+
+        % Value changed function: SCButton_8
+        function SCButton_8ValueChanged(app, event)
+            value = app.SCButton_8.Value;
+            if ~value
+                app.SCButton_8.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_8.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_SC_nongate");
+            app.STATUSTextArea.Value="You are Viewing PH_SC_nongate.xlsx";
+        end
+
+        % Value changed function: GENButton_3
+        function GENButton_3ValueChanged(app, event)
+            value = app.GENButton_3.Value;
+            if ~value
+                app.GENButton_3.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_3.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing AP_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: GENButton_4
+        function GENButton_4ValueChanged(app, event)
+            value = app.GENButton_4.Value;
+            if ~value
+                app.GENButton_4.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_4.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing CMP_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: GENButton_5
+        function GENButton_5ValueChanged(app, event)
+            value = app.GENButton_5.Value;
+            if ~value
+                app.GENButton_5.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_5.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing HEP_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: GENButton_6
+        function GENButton_6ValueChanged(app, event)
+            value = app.GENButton_6.Value;
+            if ~value
+                app.GENButton_6.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_6.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing NP_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: GENButton_7
+        function GENButton_7ValueChanged(app, event)
+            value = app.GENButton_7.Value;
+            if ~value
+                app.GENButton_7.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.GENButton_7.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_GEN_Gate");
+            app.STATUSTextArea.Value="You are Viewing PH_GEN_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_3
+        function OBCButton_3ValueChanged(app, event)
+            value = app.OBCButton_3.Value;
+            if ~value
+                app.OBCButton_3.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_3.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing AP_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_4
+        function OBCButton_4ValueChanged(app, event)
+            value = app.OBCButton_4.Value;
+            if ~value
+                app.OBCButton_4.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_4.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing CMP_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_5
+        function OBCButton_5ValueChanged(app, event)
+            value = app.OBCButton_5.Value;
+            if ~value
+                app.OBCButton_5.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_5.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing HEP_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_6
+        function OBCButton_6ValueChanged(app, event)
+            value = app.OBCButton_6.Value;
+            if ~value
+                app.OBCButton_6.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_6.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing NP_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: OBCButton_14
+        function OBCButton_14ValueChanged(app, event)
+            value = app.OBCButton_14.Value;
+            if ~value
+                app.OBCButton_14.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.OBCButton_14.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_OBC_Gate");
+            app.STATUSTextArea.Value="You are Viewing PH_OBC_Gate.xlsx";
+        end
+
+        % Value changed function: SCButton_3
+        function SCButton_3ValueChanged(app, event)
+            value = app.SCButton_3.Value;
+            if ~value
+                app.SCButton_3.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_3.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","AP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing AP_SC_Gate.xlsx";
+        end
+
+        % Value changed function: SCButton_4
+        function SCButton_4ValueChanged(app, event)
+            value = app.SCButton_4.Value;
+            if ~value
+                app.SCButton_4.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_4.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","CMP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing CMP_SC_Gate.xlsx";
+            
+        end
+
+        % Value changed function: SCButton_5
+        function SCButton_5ValueChanged(app, event)
+            value = app.SCButton_5.Value;
+            if ~value
+                app.SCButton_5.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_5.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","HEP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing HEP_SC_Gate.xlsx";
+        end
+
+        % Value changed function: SCButton_6
+        function SCButton_6ValueChanged(app, event)
+            value = app.SCButton_6.Value;
+            if ~value
+                app.SCButton_6.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_6.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","NP_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing NP_SC_Gate.xlsx";
+        end
+
+        % Value changed function: SCButton_7
+        function SCButton_7ValueChanged(app, event)
+            value = app.SCButton_7.Value;
+            if ~value
+                app.SCButton_7.Value=true;
+                app.STATUSTextArea.Value="You are already viewing this file";
+                return
+            end
+            enable(app);
+            app.SCButton_7.Value=true;drawnow;
+            app.UITable.Data = readtable(app.reading,"Sheet","PH_SC_Gate");
+            app.STATUSTextArea.Value="You are Viewing PH_SC_Gate.xlsx";
+        end
+
+        % Button pushed function: FurtherShortlistCandidatesButton
+        function FurtherShortlistCandidatesButtonPushed(app, event)
+            app.ViewShortlistedCandidatesPanel.Visible="off";
+            app.FurtherShortlistCandidatesButton.Visible="off";
+            app.SetCutoffsPanel.Visible="on";
+            app.GOButton.Visible="on";
+        end
+
+        % Button pushed function: GOButton
+        function GOButtonPushed(app, event)
+            app.STATUSTextArea.Value="Please Wait, Final Shortlisting in Progress";
+            drawnow;
+            app.SetCutoffsPanel.Visible="off";
+            Final(app);
+            app.GOButton.Visible="off";
+            app.reading="Final_List.xlsx";
+            app.STATUSTextArea.Value="Here is the final Shortlist";
+            app.ViewShortlistedCandidatesPanel.Visible="on";
+            app.Panel.Visible="off";
+            app.ViewShortlistedCandidatesPanel.Title="View Final Shortlist";
+            
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.Position = [100 100 1501 839];
+            app.UIFigure.Name = 'MATLAB App';
+
+            % Create UITable
+            app.UITable = uitable(app.UIFigure);
+            app.UITable.ColumnName = {''};
+            app.UITable.RowName = {};
+            app.UITable.Position = [40 382 1435 369];
+
+            % Create STATUSTextAreaLabel
+            app.STATUSTextAreaLabel = uilabel(app.UIFigure);
+            app.STATUSTextAreaLabel.HorizontalAlignment = 'center';
+            app.STATUSTextAreaLabel.Position = [544 789 51 27];
+            app.STATUSTextAreaLabel.Text = 'STATUS';
+
+            % Create STATUSTextArea
+            app.STATUSTextArea = uitextarea(app.UIFigure);
+            app.STATUSTextArea.Position = [610 789 239 27];
+
+            % Create Panel
+            app.Panel = uipanel(app.UIFigure);
+            app.Panel.BorderType = 'none';
+            app.Panel.Position = [521 95 404 149];
+
+            % Create LoadTableButton
+            app.LoadTableButton = uibutton(app.Panel, 'push');
+            app.LoadTableButton.ButtonPushedFcn = createCallbackFcn(app, @LoadTableButtonPushed, true);
+            app.LoadTableButton.Position = [127 115 100 22];
+            app.LoadTableButton.Text = 'Load Table';
+
+            % Create FileLoadedLamp
+            app.FileLoadedLamp = uilamp(app.Panel);
+            app.FileLoadedLamp.Position = [95 115 22 22];
+            app.FileLoadedLamp.Color = [1 0 0];
+
+            % Create DivideandScrutinyShortlistCandidatesButton
+            app.DivideandScrutinyShortlistCandidatesButton = uibutton(app.Panel, 'push');
+            app.DivideandScrutinyShortlistCandidatesButton.ButtonPushedFcn = createCallbackFcn(app, @DivideandScrutinyShortlistCandidatesButtonPushed, true);
+            app.DivideandScrutinyShortlistCandidatesButton.Position = [67 64 232 22];
+            app.DivideandScrutinyShortlistCandidatesButton.Text = 'Divide and Scrutiny Shortlist Candidates';
+
+            % Create Lamp
+            app.Lamp = uilamp(app.Panel);
+            app.Lamp.Position = [32 64 20 20];
+            app.Lamp.Color = [0.851 0.3255 0.098];
+
+            % Create ViewShortlistedCandidatesPanel
+            app.ViewShortlistedCandidatesPanel = uipanel(app.UIFigure);
+            app.ViewShortlistedCandidatesPanel.ForegroundColor = [1 0 0];
+            app.ViewShortlistedCandidatesPanel.TitlePosition = 'centertop';
+            app.ViewShortlistedCandidatesPanel.Title = 'View Shortlisted Candidates';
+            app.ViewShortlistedCandidatesPanel.Visible = 'off';
+            app.ViewShortlistedCandidatesPanel.BackgroundColor = [0.9216 0.851 0.102];
+            app.ViewShortlistedCandidatesPanel.FontWeight = 'bold';
+            app.ViewShortlistedCandidatesPanel.FontSize = 20;
+            app.ViewShortlistedCandidatesPanel.Position = [149 7 1041 356];
+
+            % Create GENButton
+            app.GENButton = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton.ValueChangedFcn = createCallbackFcn(app, @GENButtonValueChanged, true);
+            app.GENButton.Text = 'GEN';
+            app.GENButton.Position = [258 224 100 22];
+
+            % Create GENButton_2
+            app.GENButton_2 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_2.ValueChangedFcn = createCallbackFcn(app, @GENButton_2ValueChanged, true);
+            app.GENButton_2.Text = 'GEN';
+            app.GENButton_2.Position = [259 188 100 22];
+
+            % Create GENButton_3
+            app.GENButton_3 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_3.ValueChangedFcn = createCallbackFcn(app, @GENButton_3ValueChanged, true);
+            app.GENButton_3.Text = 'GEN';
+            app.GENButton_3.Position = [259 151 100 22];
+
+            % Create GENButton_4
+            app.GENButton_4 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_4.ValueChangedFcn = createCallbackFcn(app, @GENButton_4ValueChanged, true);
+            app.GENButton_4.Text = 'GEN';
+            app.GENButton_4.Position = [259 119 100 22];
+
+            % Create GENButton_5
+            app.GENButton_5 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_5.ValueChangedFcn = createCallbackFcn(app, @GENButton_5ValueChanged, true);
+            app.GENButton_5.Text = 'GEN';
+            app.GENButton_5.Position = [259 83 100 22];
+
+            % Create GENButton_6
+            app.GENButton_6 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_6.ValueChangedFcn = createCallbackFcn(app, @GENButton_6ValueChanged, true);
+            app.GENButton_6.Text = 'GEN';
+            app.GENButton_6.Position = [259 50 100 22];
+
+            % Create GENButton_7
+            app.GENButton_7 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_7.ValueChangedFcn = createCallbackFcn(app, @GENButton_7ValueChanged, true);
+            app.GENButton_7.Text = 'GEN';
+            app.GENButton_7.Position = [259 14 100 22];
+
+            % Create OBCButton
+            app.OBCButton = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton.ValueChangedFcn = createCallbackFcn(app, @OBCButtonValueChanged, true);
+            app.OBCButton.Text = 'OBC';
+            app.OBCButton.Position = [381 224 100 22];
+
+            % Create OBCButton_2
+            app.OBCButton_2 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_2.ValueChangedFcn = createCallbackFcn(app, @OBCButton_2ValueChanged, true);
+            app.OBCButton_2.Text = 'OBC';
+            app.OBCButton_2.Position = [382 188 100 22];
+
+            % Create OBCButton_3
+            app.OBCButton_3 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_3.ValueChangedFcn = createCallbackFcn(app, @OBCButton_3ValueChanged, true);
+            app.OBCButton_3.Text = 'OBC';
+            app.OBCButton_3.Position = [382 151 100 22];
+
+            % Create OBCButton_4
+            app.OBCButton_4 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_4.ValueChangedFcn = createCallbackFcn(app, @OBCButton_4ValueChanged, true);
+            app.OBCButton_4.Text = 'OBC';
+            app.OBCButton_4.Position = [382 119 100 22];
+
+            % Create OBCButton_5
+            app.OBCButton_5 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_5.ValueChangedFcn = createCallbackFcn(app, @OBCButton_5ValueChanged, true);
+            app.OBCButton_5.Text = 'OBC';
+            app.OBCButton_5.Position = [382 83 100 22];
+
+            % Create OBCButton_6
+            app.OBCButton_6 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_6.ValueChangedFcn = createCallbackFcn(app, @OBCButton_6ValueChanged, true);
+            app.OBCButton_6.Text = 'OBC';
+            app.OBCButton_6.Position = [382 50 100 22];
+
+            % Create OBCButton_14
+            app.OBCButton_14 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_14.ValueChangedFcn = createCallbackFcn(app, @OBCButton_14ValueChanged, true);
+            app.OBCButton_14.Text = 'OBC';
+            app.OBCButton_14.Position = [382 14 100 22];
+
+            % Create SCButton
+            app.SCButton = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton.ValueChangedFcn = createCallbackFcn(app, @SCButtonValueChanged, true);
+            app.SCButton.Text = 'SC';
+            app.SCButton.Position = [513 224 100 22];
+
+            % Create SCButton_2
+            app.SCButton_2 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_2.ValueChangedFcn = createCallbackFcn(app, @SCButton_2ValueChanged, true);
+            app.SCButton_2.Text = 'SC';
+            app.SCButton_2.Position = [514 188 100 22];
+
+            % Create SCButton_3
+            app.SCButton_3 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_3.ValueChangedFcn = createCallbackFcn(app, @SCButton_3ValueChanged, true);
+            app.SCButton_3.Text = 'SC';
+            app.SCButton_3.Position = [514 151 100 22];
+
+            % Create SCButton_4
+            app.SCButton_4 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_4.ValueChangedFcn = createCallbackFcn(app, @SCButton_4ValueChanged, true);
+            app.SCButton_4.Text = 'SC';
+            app.SCButton_4.Position = [514 119 100 22];
+
+            % Create SCButton_5
+            app.SCButton_5 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_5.ValueChangedFcn = createCallbackFcn(app, @SCButton_5ValueChanged, true);
+            app.SCButton_5.Text = 'SC';
+            app.SCButton_5.Position = [514 83 100 22];
+
+            % Create SCButton_6
+            app.SCButton_6 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_6.ValueChangedFcn = createCallbackFcn(app, @SCButton_6ValueChanged, true);
+            app.SCButton_6.Text = 'SC';
+            app.SCButton_6.Position = [514 50 100 22];
+
+            % Create SCButton_7
+            app.SCButton_7 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_7.ValueChangedFcn = createCallbackFcn(app, @SCButton_7ValueChanged, true);
+            app.SCButton_7.Text = 'SC';
+            app.SCButton_7.Position = [514 14 100 22];
+
+            % Create GENButton_14
+            app.GENButton_14 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_14.ValueChangedFcn = createCallbackFcn(app, @GENButton_14ValueChanged, true);
+            app.GENButton_14.Text = 'GEN';
+            app.GENButton_14.Position = [650 219 100 22];
+
+            % Create GENButton_13
+            app.GENButton_13 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_13.ValueChangedFcn = createCallbackFcn(app, @GENButton_13ValueChanged, true);
+            app.GENButton_13.Text = 'GEN';
+            app.GENButton_13.Position = [651 183 100 22];
+
+            % Create GENButton_12
+            app.GENButton_12 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_12.ValueChangedFcn = createCallbackFcn(app, @GENButton_12ValueChanged, true);
+            app.GENButton_12.Text = 'GEN';
+            app.GENButton_12.Position = [651 146 100 22];
+
+            % Create GENButton_11
+            app.GENButton_11 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_11.ValueChangedFcn = createCallbackFcn(app, @GENButton_11ValueChanged, true);
+            app.GENButton_11.Text = 'GEN';
+            app.GENButton_11.Position = [651 114 100 22];
+
+            % Create GENButton_10
+            app.GENButton_10 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_10.ValueChangedFcn = createCallbackFcn(app, @GENButton_10ValueChanged, true);
+            app.GENButton_10.Text = 'GEN';
+            app.GENButton_10.Position = [651 78 100 22];
+
+            % Create GENButton_9
+            app.GENButton_9 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_9.Text = 'GEN';
+            app.GENButton_9.Position = [651 45 100 22];
+
+            % Create GENButton_8
+            app.GENButton_8 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_8.ValueChangedFcn = createCallbackFcn(app, @GENButton_8ValueChanged, true);
+            app.GENButton_8.Text = 'GEN';
+            app.GENButton_8.Position = [651 9 100 22];
+
+            % Create OBCButton_7
+            app.OBCButton_7 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_7.ValueChangedFcn = createCallbackFcn(app, @OBCButton_7ValueChanged, true);
+            app.OBCButton_7.Text = 'OBC';
+            app.OBCButton_7.Position = [779 219 100 22];
+
+            % Create OBCButton_8
+            app.OBCButton_8 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_8.ValueChangedFcn = createCallbackFcn(app, @OBCButton_8ValueChanged, true);
+            app.OBCButton_8.Text = 'OBC';
+            app.OBCButton_8.Position = [780 183 100 22];
+
+            % Create OBCButton_9
+            app.OBCButton_9 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_9.ValueChangedFcn = createCallbackFcn(app, @OBCButton_9ValueChanged, true);
+            app.OBCButton_9.Text = 'OBC';
+            app.OBCButton_9.Position = [780 146 100 22];
+
+            % Create OBCButton_10
+            app.OBCButton_10 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_10.ValueChangedFcn = createCallbackFcn(app, @OBCButton_10ValueChanged, true);
+            app.OBCButton_10.Text = 'OBC';
+            app.OBCButton_10.Position = [780 114 100 22];
+
+            % Create OBCButton_11
+            app.OBCButton_11 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_11.ValueChangedFcn = createCallbackFcn(app, @OBCButton_11ValueChanged, true);
+            app.OBCButton_11.Text = 'OBC';
+            app.OBCButton_11.Position = [780 78 100 22];
+
+            % Create OBCButton_12
+            app.OBCButton_12 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_12.ValueChangedFcn = createCallbackFcn(app, @OBCButton_12ValueChanged, true);
+            app.OBCButton_12.Text = 'OBC';
+            app.OBCButton_12.Position = [780 45 100 22];
+
+            % Create OBCButton_13
+            app.OBCButton_13 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.OBCButton_13.ValueChangedFcn = createCallbackFcn(app, @OBCButton_13ValueChanged, true);
+            app.OBCButton_13.Text = 'OBC';
+            app.OBCButton_13.Position = [780 9 100 22];
+
+            % Create SCButton_14
+            app.SCButton_14 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_14.ValueChangedFcn = createCallbackFcn(app, @SCButton_14ValueChanged, true);
+            app.SCButton_14.Text = 'SC';
+            app.SCButton_14.Position = [919 219 100 22];
+
+            % Create SCButton_13
+            app.SCButton_13 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_13.ValueChangedFcn = createCallbackFcn(app, @SCButton_13ValueChanged, true);
+            app.SCButton_13.Text = 'SC';
+            app.SCButton_13.Position = [920 183 100 22];
+
+            % Create SCButton_12
+            app.SCButton_12 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_12.ValueChangedFcn = createCallbackFcn(app, @SCButton_12ValueChanged, true);
+            app.SCButton_12.Text = 'SC';
+            app.SCButton_12.Position = [920 146 100 22];
+
+            % Create SCButton_11
+            app.SCButton_11 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_11.ValueChangedFcn = createCallbackFcn(app, @SCButton_11ValueChanged, true);
+            app.SCButton_11.Text = 'SC';
+            app.SCButton_11.Position = [920 114 100 22];
+
+            % Create SCButton_10
+            app.SCButton_10 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_10.ValueChangedFcn = createCallbackFcn(app, @SCButton_10ValueChanged, true);
+            app.SCButton_10.Text = 'SC';
+            app.SCButton_10.Position = [920 78 100 22];
+
+            % Create SCButton_9
+            app.SCButton_9 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_9.ValueChangedFcn = createCallbackFcn(app, @SCButton_9ValueChanged, true);
+            app.SCButton_9.Text = 'SC';
+            app.SCButton_9.Position = [920 45 100 22];
+
+            % Create SCButton_8
+            app.SCButton_8 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.SCButton_8.ValueChangedFcn = createCallbackFcn(app, @SCButton_8ValueChanged, true);
+            app.SCButton_8.Text = 'SC';
+            app.SCButton_8.Position = [920 9 100 22];
+
+            % Create GATECandidatesLabel
+            app.GATECandidatesLabel = uilabel(app.ViewShortlistedCandidatesPanel);
+            app.GATECandidatesLabel.FontSize = 16;
+            app.GATECandidatesLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.GATECandidatesLabel.Position = [365 264 134 22];
+            app.GATECandidatesLabel.Text = 'GATE Candidates';
+
+            % Create NONGATECandidatesLabel
+            app.NONGATECandidatesLabel = uilabel(app.ViewShortlistedCandidatesPanel);
+            app.NONGATECandidatesLabel.FontSize = 16;
+            app.NONGATECandidatesLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.NONGATECandidatesLabel.Position = [735 269 174 22];
+            app.NONGATECandidatesLabel.Text = 'NON-GATE Candidates';
+
+            % Create TextArea
+            app.TextArea = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea.HorizontalAlignment = 'center';
+            app.TextArea.Position = [51 217 98 24];
+            app.TextArea.Value = {'AMP'};
+
+            % Create TextArea_2
+            app.TextArea_2 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_2.HorizontalAlignment = 'center';
+            app.TextArea_2.Position = [51 182 98 24];
+            app.TextArea_2.Value = {'ASP'};
+
+            % Create TextArea_3
+            app.TextArea_3 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_3.HorizontalAlignment = 'center';
+            app.TextArea_3.Position = [51 145 98 24];
+            app.TextArea_3.Value = {'AP'};
+
+            % Create TextArea_4
+            app.TextArea_4 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_4.HorizontalAlignment = 'center';
+            app.TextArea_4.Position = [51 115 98 24];
+            app.TextArea_4.Value = {'CMP'};
+
+            % Create TextArea_5
+            app.TextArea_5 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_5.HorizontalAlignment = 'center';
+            app.TextArea_5.Position = [51 77 98 24];
+            app.TextArea_5.Value = {'HEP'};
+
+            % Create TextArea_6
+            app.TextArea_6 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_6.HorizontalAlignment = 'center';
+            app.TextArea_6.Position = [51 44 98 24];
+            app.TextArea_6.Value = {'NP'};
+
+            % Create TextArea_7
+            app.TextArea_7 = uitextarea(app.ViewShortlistedCandidatesPanel);
+            app.TextArea_7.HorizontalAlignment = 'center';
+            app.TextArea_7.Position = [51 9 98 24];
+            app.TextArea_7.Value = {'PH'};
+
+            % Create SubjectCodesLabel
+            app.SubjectCodesLabel = uilabel(app.ViewShortlistedCandidatesPanel);
+            app.SubjectCodesLabel.FontSize = 16;
+            app.SubjectCodesLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.SubjectCodesLabel.Position = [46 269 108.99 21.99];
+            app.SubjectCodesLabel.Text = 'Subject Codes';
+
+            % Create GENButton_15
+            app.GENButton_15 = uibutton(app.ViewShortlistedCandidatesPanel, 'state');
+            app.GENButton_15.ValueChangedFcn = createCallbackFcn(app, @GENButton_15ValueChanged, true);
+            app.GENButton_15.Text = 'GEN';
+            app.GENButton_15.Position = [651 45 100 22];
+
+            % Create FurtherShortlistCandidatesButton
+            app.FurtherShortlistCandidatesButton = uibutton(app.UIFigure, 'push');
+            app.FurtherShortlistCandidatesButton.ButtonPushedFcn = createCallbackFcn(app, @FurtherShortlistCandidatesButtonPushed, true);
+            app.FurtherShortlistCandidatesButton.BackgroundColor = [0.6314 0.9686 0.6314];
+            app.FurtherShortlistCandidatesButton.FontColor = [1 0 0];
+            app.FurtherShortlistCandidatesButton.Visible = 'off';
+            app.FurtherShortlistCandidatesButton.Position = [1215 127 201 85];
+            app.FurtherShortlistCandidatesButton.Text = 'Further Shortlist Candidates';
+
+            % Create SetCutoffsPanel
+            app.SetCutoffsPanel = uipanel(app.UIFigure);
+            app.SetCutoffsPanel.ForegroundColor = [1 0.4118 0.1608];
+            app.SetCutoffsPanel.TitlePosition = 'centertop';
+            app.SetCutoffsPanel.Title = 'Set Cutoffs';
+            app.SetCutoffsPanel.Visible = 'off';
+            app.SetCutoffsPanel.BackgroundColor = [1 1 0];
+            app.SetCutoffsPanel.FontSize = 20;
+            app.SetCutoffsPanel.Position = [40 13 1291 344];
+
+            % Create SubjectCodesLabel_2
+            app.SubjectCodesLabel_2 = uilabel(app.SetCutoffsPanel);
+            app.SubjectCodesLabel_2.FontSize = 16;
+            app.SubjectCodesLabel_2.FontColor = [0.9412 0.2627 0.0941];
+            app.SubjectCodesLabel_2.Position = [27 272 109 22];
+            app.SubjectCodesLabel_2.Text = 'Subject Codes';
+
+            % Create TextArea_8
+            app.TextArea_8 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_8.HorizontalAlignment = 'center';
+            app.TextArea_8.Position = [32 220 98 24];
+            app.TextArea_8.Value = {'AMP'};
+
+            % Create TextArea_9
+            app.TextArea_9 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_9.HorizontalAlignment = 'center';
+            app.TextArea_9.Position = [32 185 98 24];
+            app.TextArea_9.Value = {'ASP'};
+
+            % Create TextArea_10
+            app.TextArea_10 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_10.HorizontalAlignment = 'center';
+            app.TextArea_10.Position = [32 148 98 24];
+            app.TextArea_10.Value = {'AP'};
+
+            % Create TextArea_11
+            app.TextArea_11 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_11.HorizontalAlignment = 'center';
+            app.TextArea_11.Position = [32 118 98 24];
+            app.TextArea_11.Value = {'CMP'};
+
+            % Create TextArea_12
+            app.TextArea_12 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_12.HorizontalAlignment = 'center';
+            app.TextArea_12.Position = [32 80 98 24];
+            app.TextArea_12.Value = {'HEP'};
+
+            % Create TextArea_13
+            app.TextArea_13 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_13.HorizontalAlignment = 'center';
+            app.TextArea_13.Position = [32 47 98 24];
+            app.TextArea_13.Value = {'NP'};
+
+            % Create TextArea_14
+            app.TextArea_14 = uitextarea(app.SetCutoffsPanel);
+            app.TextArea_14.HorizontalAlignment = 'center';
+            app.TextArea_14.Position = [32 12 98 24];
+            app.TextArea_14.Value = {'PH'};
+
+            % Create GENGATELabel
+            app.GENGATELabel = uilabel(app.SetCutoffsPanel);
+            app.GENGATELabel.FontColor = [0.9412 0.2627 0.0941];
+            app.GENGATELabel.Position = [199 272 67 22];
+            app.GENGATELabel.Text = 'GEN-GATE';
+
+            % Create Label
+            app.Label = uilabel(app.SetCutoffsPanel);
+            app.Label.FontSize = 16;
+            app.Label.FontColor = [0.9412 0.2627 0.0941];
+            app.Label.Position = [506 142 25 22];
+            app.Label.Text = '';
+
+            % Create GENEWSGATELabel
+            app.GENEWSGATELabel = uilabel(app.SetCutoffsPanel);
+            app.GENEWSGATELabel.FontColor = [0.9412 0.2627 0.0941];
+            app.GENEWSGATELabel.Position = [287 272 98 22];
+            app.GENEWSGATELabel.Text = 'GEN-EWS-GATE';
+
+            % Create OBCGATELabel
+            app.OBCGATELabel = uilabel(app.SetCutoffsPanel);
+            app.OBCGATELabel.FontColor = [0.9412 0.2627 0.0941];
+            app.OBCGATELabel.Position = [418 272 67 22];
+            app.OBCGATELabel.Text = 'OBC-GATE';
+
+            % Create PWDGATELabel
+            app.PWDGATELabel = uilabel(app.SetCutoffsPanel);
+            app.PWDGATELabel.FontColor = [0.9412 0.2627 0.0941];
+            app.PWDGATELabel.Position = [511 272 69 22];
+            app.PWDGATELabel.Text = 'PWD-GATE';
+
+            % Create SCGATELabel
+            app.SCGATELabel = uilabel(app.SetCutoffsPanel);
+            app.SCGATELabel.FontColor = [0.9412 0.2627 0.0941];
+            app.SCGATELabel.Position = [608 272 58 22];
+            app.SCGATELabel.Text = 'SC-GATE';
+
+            % Create GENNongateLabel
+            app.GENNongateLabel = uilabel(app.SetCutoffsPanel);
+            app.GENNongateLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.GENNongateLabel.Position = [744 272 81 22];
+            app.GENNongateLabel.Text = 'GEN-Nongate';
+
+            % Create GENEWSNongateLabel
+            app.GENEWSNongateLabel = uilabel(app.SetCutoffsPanel);
+            app.GENEWSNongateLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.GENEWSNongateLabel.Position = [848 272 112 22];
+            app.GENEWSNongateLabel.Text = 'GEN-EWS-Nongate';
+
+            % Create OBCNongateLabel
+            app.OBCNongateLabel = uilabel(app.SetCutoffsPanel);
+            app.OBCNongateLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.OBCNongateLabel.Position = [984 272 81 22];
+            app.OBCNongateLabel.Text = 'OBC-Nongate';
+
+            % Create PWDNongateLabel
+            app.PWDNongateLabel = uilabel(app.SetCutoffsPanel);
+            app.PWDNongateLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.PWDNongateLabel.Position = [1182 272 83 22];
+            app.PWDNongateLabel.Text = 'PWD-Nongate';
+
+            % Create SCNongateLabel
+            app.SCNongateLabel = uilabel(app.SetCutoffsPanel);
+            app.SCNongateLabel.FontColor = [0.9412 0.2627 0.0941];
+            app.SCNongateLabel.Position = [1083 272 71 22];
+            app.SCNongateLabel.Text = 'SC-Nongate';
+
+            % Create EditField
+            app.EditField = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField.HorizontalAlignment = 'center';
+            app.EditField.Position = [199 220 67 22];
+            app.EditField.Value = 700;
+
+            % Create EditField_2
+            app.EditField_2 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_2.HorizontalAlignment = 'center';
+            app.EditField_2.Position = [199 186 67 22];
+            app.EditField_2.Value = 700;
+
+            % Create EditField_3
+            app.EditField_3 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_3.HorizontalAlignment = 'center';
+            app.EditField_3.Position = [199 149 67 22];
+            app.EditField_3.Value = 700;
+
+            % Create EditField_4
+            app.EditField_4 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_4.HorizontalAlignment = 'center';
+            app.EditField_4.Position = [199 119 67 22];
+            app.EditField_4.Value = 700;
+
+            % Create EditField_5
+            app.EditField_5 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_5.HorizontalAlignment = 'center';
+            app.EditField_5.Position = [199 81 67 22];
+            app.EditField_5.Value = 700;
+
+            % Create EditField_6
+            app.EditField_6 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_6.HorizontalAlignment = 'center';
+            app.EditField_6.Position = [199 48 67 22];
+            app.EditField_6.Value = 700;
+
+            % Create EditField_7
+            app.EditField_7 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_7.HorizontalAlignment = 'center';
+            app.EditField_7.Position = [200 13 67 22];
+            app.EditField_7.Value = 700;
+
+            % Create EditField_8
+            app.EditField_8 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_8.HorizontalAlignment = 'center';
+            app.EditField_8.Position = [302 222 67 22];
+            app.EditField_8.Value = 630;
+
+            % Create EditField_9
+            app.EditField_9 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_9.HorizontalAlignment = 'center';
+            app.EditField_9.Position = [302 187 67 22];
+            app.EditField_9.Value = 630;
+
+            % Create EditField_10
+            app.EditField_10 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_10.HorizontalAlignment = 'center';
+            app.EditField_10.Position = [302 150 67 22];
+            app.EditField_10.Value = 630;
+
+            % Create EditField_11
+            app.EditField_11 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_11.HorizontalAlignment = 'center';
+            app.EditField_11.Position = [302 120 67 22];
+            app.EditField_11.Value = 630;
+
+            % Create EditField_12
+            app.EditField_12 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_12.HorizontalAlignment = 'center';
+            app.EditField_12.Position = [302 82 67 22];
+            app.EditField_12.Value = 630;
+
+            % Create EditField_13
+            app.EditField_13 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_13.HorizontalAlignment = 'center';
+            app.EditField_13.Position = [302 49 67 22];
+            app.EditField_13.Value = 630;
+
+            % Create EditField_14
+            app.EditField_14 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_14.HorizontalAlignment = 'center';
+            app.EditField_14.Position = [303 14 67 22];
+            app.EditField_14.Value = 630;
+
+            % Create EditField_15
+            app.EditField_15 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_15.HorizontalAlignment = 'center';
+            app.EditField_15.Position = [418 221 67 22];
+            app.EditField_15.Value = 630;
+
+            % Create EditField_16
+            app.EditField_16 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_16.HorizontalAlignment = 'center';
+            app.EditField_16.Position = [418 186 67 22];
+            app.EditField_16.Value = 630;
+
+            % Create EditField_17
+            app.EditField_17 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_17.HorizontalAlignment = 'center';
+            app.EditField_17.Position = [418 149 67 22];
+            app.EditField_17.Value = 630;
+
+            % Create EditField_18
+            app.EditField_18 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_18.HorizontalAlignment = 'center';
+            app.EditField_18.Position = [418 119 67 22];
+            app.EditField_18.Value = 630;
+
+            % Create EditField_19
+            app.EditField_19 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_19.HorizontalAlignment = 'center';
+            app.EditField_19.Position = [418 81 67 22];
+            app.EditField_19.Value = 630;
+
+            % Create EditField_20
+            app.EditField_20 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_20.HorizontalAlignment = 'center';
+            app.EditField_20.Position = [418 48 67 22];
+            app.EditField_20.Value = 630;
+
+            % Create EditField_21
+            app.EditField_21 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_21.HorizontalAlignment = 'center';
+            app.EditField_21.Position = [419 13 67 22];
+            app.EditField_21.Value = 630;
+
+            % Create EditField_22
+            app.EditField_22 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_22.HorizontalAlignment = 'center';
+            app.EditField_22.Position = [604 221 67 22];
+            app.EditField_22.Value = 462;
+
+            % Create EditField_23
+            app.EditField_23 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_23.HorizontalAlignment = 'center';
+            app.EditField_23.Position = [604 186 67 22];
+            app.EditField_23.Value = 462;
+
+            % Create EditField_24
+            app.EditField_24 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_24.HorizontalAlignment = 'center';
+            app.EditField_24.Position = [604 149 67 22];
+            app.EditField_24.Value = 462;
+
+            % Create EditField_25
+            app.EditField_25 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_25.HorizontalAlignment = 'center';
+            app.EditField_25.Position = [604 119 67 22];
+            app.EditField_25.Value = 462;
+
+            % Create EditField_26
+            app.EditField_26 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_26.HorizontalAlignment = 'center';
+            app.EditField_26.Position = [604 81 67 22];
+            app.EditField_26.Value = 462;
+
+            % Create EditField_27
+            app.EditField_27 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_27.HorizontalAlignment = 'center';
+            app.EditField_27.Position = [604 48 67 22];
+            app.EditField_27.Value = 462;
+
+            % Create EditField_28
+            app.EditField_28 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_28.HorizontalAlignment = 'center';
+            app.EditField_28.Position = [605 13 67 22];
+            app.EditField_28.Value = 462;
+
+            % Create EditField_29
+            app.EditField_29 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_29.HorizontalAlignment = 'center';
+            app.EditField_29.Position = [513 221 67 22];
+            app.EditField_29.Value = 462;
+
+            % Create EditField_30
+            app.EditField_30 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_30.HorizontalAlignment = 'center';
+            app.EditField_30.Position = [513 186 67 22];
+            app.EditField_30.Value = 462;
+
+            % Create EditField_31
+            app.EditField_31 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_31.HorizontalAlignment = 'center';
+            app.EditField_31.Position = [513 149 67 22];
+            app.EditField_31.Value = 462;
+
+            % Create EditField_32
+            app.EditField_32 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_32.HorizontalAlignment = 'center';
+            app.EditField_32.Position = [513 119 67 22];
+            app.EditField_32.Value = 462;
+
+            % Create EditField_33
+            app.EditField_33 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_33.HorizontalAlignment = 'center';
+            app.EditField_33.Position = [513 81 67 22];
+            app.EditField_33.Value = 462;
+
+            % Create EditField_34
+            app.EditField_34 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_34.HorizontalAlignment = 'center';
+            app.EditField_34.Position = [513 48 67 22];
+            app.EditField_34.Value = 462;
+
+            % Create EditField_35
+            app.EditField_35 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_35.HorizontalAlignment = 'center';
+            app.EditField_35.Position = [514 13 67 22];
+            app.EditField_35.Value = 462;
+
+            % Create EditField_36
+            app.EditField_36 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_36.HorizontalAlignment = 'center';
+            app.EditField_36.Position = [752 220 67 22];
+            app.EditField_36.Value = 94;
+
+            % Create EditField_37
+            app.EditField_37 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_37.HorizontalAlignment = 'center';
+            app.EditField_37.Position = [752 185 67 22];
+            app.EditField_37.Value = 94;
+
+            % Create EditField_38
+            app.EditField_38 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_38.HorizontalAlignment = 'center';
+            app.EditField_38.Position = [752 148 67 22];
+            app.EditField_38.Value = 94;
+
+            % Create EditField_39
+            app.EditField_39 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_39.HorizontalAlignment = 'center';
+            app.EditField_39.Position = [752 118 67 22];
+            app.EditField_39.Value = 94;
+
+            % Create EditField_40
+            app.EditField_40 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_40.HorizontalAlignment = 'center';
+            app.EditField_40.Position = [752 80 67 22];
+            app.EditField_40.Value = 94;
+
+            % Create EditField_41
+            app.EditField_41 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_41.HorizontalAlignment = 'center';
+            app.EditField_41.Position = [752 47 67 22];
+            app.EditField_41.Value = 94;
+
+            % Create EditField_42
+            app.EditField_42 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_42.HorizontalAlignment = 'center';
+            app.EditField_42.Position = [753 12 67 22];
+            app.EditField_42.Value = 94;
+
+            % Create EditField_43
+            app.EditField_43 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_43.HorizontalAlignment = 'center';
+            app.EditField_43.Position = [871 220 67 22];
+            app.EditField_43.Value = 84.6;
+
+            % Create EditField_44
+            app.EditField_44 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_44.HorizontalAlignment = 'center';
+            app.EditField_44.Position = [871 185 67 22];
+            app.EditField_44.Value = 84.6;
+
+            % Create EditField_45
+            app.EditField_45 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_45.HorizontalAlignment = 'center';
+            app.EditField_45.Position = [871 148 67 22];
+            app.EditField_45.Value = 84.6;
+
+            % Create EditField_46
+            app.EditField_46 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_46.HorizontalAlignment = 'center';
+            app.EditField_46.Position = [871 118 67 22];
+            app.EditField_46.Value = 84.6;
+
+            % Create EditField_47
+            app.EditField_47 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_47.HorizontalAlignment = 'center';
+            app.EditField_47.Position = [871 80 67 22];
+            app.EditField_47.Value = 84.6;
+
+            % Create EditField_48
+            app.EditField_48 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_48.HorizontalAlignment = 'center';
+            app.EditField_48.Position = [871 47 67 22];
+            app.EditField_48.Value = 84.6;
+
+            % Create EditField_49
+            app.EditField_49 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_49.HorizontalAlignment = 'center';
+            app.EditField_49.Position = [872 12 67 22];
+            app.EditField_49.Value = 84.6;
+
+            % Create EditField_50
+            app.EditField_50 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_50.HorizontalAlignment = 'center';
+            app.EditField_50.Position = [992 221 67 22];
+            app.EditField_50.Value = 84.6;
+
+            % Create EditField_51
+            app.EditField_51 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_51.HorizontalAlignment = 'center';
+            app.EditField_51.Position = [992 186 67 22];
+            app.EditField_51.Value = 84.6;
+
+            % Create EditField_52
+            app.EditField_52 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_52.HorizontalAlignment = 'center';
+            app.EditField_52.Position = [992 149 67 22];
+            app.EditField_52.Value = 84.6;
+
+            % Create EditField_53
+            app.EditField_53 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_53.HorizontalAlignment = 'center';
+            app.EditField_53.Position = [992 119 67 22];
+            app.EditField_53.Value = 84.6;
+
+            % Create EditField_54
+            app.EditField_54 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_54.HorizontalAlignment = 'center';
+            app.EditField_54.Position = [992 81 67 22];
+            app.EditField_54.Value = 84.6;
+
+            % Create EditField_55
+            app.EditField_55 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_55.HorizontalAlignment = 'center';
+            app.EditField_55.Position = [992 48 67 22];
+            app.EditField_55.Value = 84.6;
+
+            % Create EditField_56
+            app.EditField_56 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_56.HorizontalAlignment = 'center';
+            app.EditField_56.Position = [993 13 67 22];
+            app.EditField_56.Value = 84.6;
+
+            % Create EditField_57
+            app.EditField_57 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_57.HorizontalAlignment = 'center';
+            app.EditField_57.Position = [1197 221 67 22];
+            app.EditField_57.Value = 62;
+
+            % Create EditField_58
+            app.EditField_58 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_58.HorizontalAlignment = 'center';
+            app.EditField_58.Position = [1197 186 67 22];
+            app.EditField_58.Value = 62;
+
+            % Create EditField_59
+            app.EditField_59 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_59.HorizontalAlignment = 'center';
+            app.EditField_59.Position = [1197 149 67 22];
+            app.EditField_59.Value = 62;
+
+            % Create EditField_60
+            app.EditField_60 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_60.HorizontalAlignment = 'center';
+            app.EditField_60.Position = [1197 119 67 22];
+            app.EditField_60.Value = 62;
+
+            % Create EditField_61
+            app.EditField_61 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_61.HorizontalAlignment = 'center';
+            app.EditField_61.Position = [1197 81 67 22];
+            app.EditField_61.Value = 62;
+
+            % Create EditField_62
+            app.EditField_62 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_62.HorizontalAlignment = 'center';
+            app.EditField_62.Position = [1197 48 67 22];
+            app.EditField_62.Value = 62;
+
+            % Create EditField_63
+            app.EditField_63 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_63.HorizontalAlignment = 'center';
+            app.EditField_63.Position = [1198 13 67 22];
+            app.EditField_63.Value = 62;
+
+            % Create EditField_64
+            app.EditField_64 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_64.HorizontalAlignment = 'center';
+            app.EditField_64.Position = [1083 220 67 22];
+            app.EditField_64.Value = 62;
+
+            % Create EditField_65
+            app.EditField_65 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_65.HorizontalAlignment = 'center';
+            app.EditField_65.Position = [1083 185 67 22];
+            app.EditField_65.Value = 62;
+
+            % Create EditField_66
+            app.EditField_66 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_66.HorizontalAlignment = 'center';
+            app.EditField_66.Position = [1083 148 67 22];
+            app.EditField_66.Value = 62;
+
+            % Create EditField_67
+            app.EditField_67 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_67.HorizontalAlignment = 'center';
+            app.EditField_67.Position = [1083 118 67 22];
+            app.EditField_67.Value = 62;
+
+            % Create EditField_68
+            app.EditField_68 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_68.HorizontalAlignment = 'center';
+            app.EditField_68.Position = [1083 80 67 22];
+            app.EditField_68.Value = 62;
+
+            % Create EditField_69
+            app.EditField_69 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_69.HorizontalAlignment = 'center';
+            app.EditField_69.Position = [1083 47 67 22];
+            app.EditField_69.Value = 62;
+
+            % Create EditField_70
+            app.EditField_70 = uieditfield(app.SetCutoffsPanel, 'numeric');
+            app.EditField_70.HorizontalAlignment = 'center';
+            app.EditField_70.Position = [1084 12 67 22];
+            app.EditField_70.Value = 62;
+
+            % Create GOButton
+            app.GOButton = uibutton(app.UIFigure, 'push');
+            app.GOButton.ButtonPushedFcn = createCallbackFcn(app, @GOButtonPushed, true);
+            app.GOButton.BackgroundColor = [0.4353 0.0824 0.4392];
+            app.GOButton.FontColor = [0 1 0];
+            app.GOButton.Visible = 'off';
+            app.GOButton.Position = [1360 141 105 41];
+            app.GOButton.Text = 'GO';
+
+            % Show the figure after all components are created
+            app.UIFigure.Visible = 'on';
+        end
+    end
+
+    % App creation and deletion
+    methods (Access = public)
+
+        % Construct app
+        function app = GUI
+
+            % Create UIFigure and components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end
